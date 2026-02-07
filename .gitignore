@@ -1,0 +1,14 @@
+# Dependency directories
+node_modules/
+dist/
+target/
+.mvn/
+
+# IDE and OS files
+.vscode/
+.idea/
+.DS_Store
+*.swp
+
+# Docker
+.docker/

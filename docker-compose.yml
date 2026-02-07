@@ -1,0 +1,21 @@
+version: '3.8'
+services:
+  backend:
+    build: ./feedback-backend
+    ports:
+      - "8080:8080"
+    networks:
+      - feedback-net
+
+  frontend:
+    build: ./feedback-frontend
+    ports:
+      - "4200:80"
+    depends_on:
+      - backend
+    networks:
+      - feedback-net
+
+networks:
+  feedback-net:
+    driver: bridge
