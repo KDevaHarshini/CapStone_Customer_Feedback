@@ -8,6 +8,6 @@ import java.util.List;
 @Repository
 public interface FeedbackRepository extends JpaRepository<Feedback, Long> {
     
-    // Spring Data JPA creates the SQL for this automatically based on the method name!
+
     List<Feedback> findByRating(Integer rating);
 }

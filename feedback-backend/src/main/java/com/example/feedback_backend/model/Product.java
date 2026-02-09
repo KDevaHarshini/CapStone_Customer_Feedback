@@ -1,6 +1,7 @@
 package com.example.feedback_backend.model;
 
 import jakarta.persistence.Entity;
+
 import jakarta.persistence.GeneratedValue;
 import jakarta.persistence.GenerationType;
 import jakarta.persistence.Id;
@@ -16,17 +17,15 @@ public class Product {
     private String name;
     
 
-    // 1. Default Constructor (Required by JPA)
     public Product() {
     }
 
-    // 2. Full Constructor (Helpful for DataLoader)
+  
     public Product(String name) {
         this.name = name;
   
     }
-
-    // 3. Explicit Getters and Setters
+    
     public Integer getProductId() {
         return productId;
     }

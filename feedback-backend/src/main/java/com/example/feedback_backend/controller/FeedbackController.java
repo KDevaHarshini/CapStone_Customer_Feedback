@@ -15,22 +15,22 @@ import java.util.List;
 public class FeedbackController {
 
     @Autowired
-    private FeedbackService feedbackService; // Now using Service instead of Repository
+    private FeedbackService feedbackService; 
 
-    // GET /api/feedback - Get all reviews
+    
     @GetMapping
     public ResponseEntity<List<Feedback>> getAllFeedback() {
         return ResponseEntity.ok(feedbackService.getAllFeedback());
     }
 
-    // POST /api/feedback - Submit a new review with Backend Validation
+    
     @PostMapping
     public ResponseEntity<Feedback> createFeedback(@Valid @RequestBody Feedback feedback) {
         Feedback savedFeedback = feedbackService.saveFeedback(feedback);
         return ResponseEntity.ok(savedFeedback);
     }
 
-    // GET /api/feedback/filter/{rating} - Requirement: View and filter feedback
+   
     @GetMapping("/filter/{rating}")
     public ResponseEntity<List<Feedback>> getFeedbackByRating(@PathVariable Integer rating) {
         return ResponseEntity.ok(feedbackService.getFeedbackByRating(rating));

@@ -12,17 +12,17 @@ public class FeedbackService {
     @Autowired
     private FeedbackRepository feedbackRepository;
 
-    // Core Functionality: Submit feedback
+    
     public Feedback saveFeedback(Feedback feedback) {
         return feedbackRepository.save(feedback);
     }
 
-    // Core Functionality: View all feedback
+    
     public List<Feedback> getAllFeedback() {
         return feedbackRepository.findAll();
     }
 
-    // Core Functionality: Filter feedback by rating (Required for evaluation)
+   
     public List<Feedback> getFeedbackByRating(Integer rating) {
         return feedbackRepository.findByRating(rating);
     }

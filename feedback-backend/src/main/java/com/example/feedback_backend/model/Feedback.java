@@ -19,12 +19,12 @@ public class Feedback {
     @GeneratedValue(strategy = GenerationType.IDENTITY)
     private Long id;
 
-    // Added CascadeType.ALL so Customer is saved automatically
+    
     @ManyToOne(cascade = CascadeType.ALL) 
     @JoinColumn(name = "customer_id")
     private Customer customer;
 
-    // Added CascadeType.ALL so Product is saved automatically
+  
     @ManyToOne(cascade = CascadeType.ALL) 
     @JoinColumn(name = "product_id")
     private Product product;
@@ -43,7 +43,7 @@ public class Feedback {
         this.comment = comment;
     }
 
-    // Getters and Setters remain the same
+
     public Long getId() { return id; }
     public void setId(Long id) { this.id = id; }
     public Customer getCustomer() { return customer; }
